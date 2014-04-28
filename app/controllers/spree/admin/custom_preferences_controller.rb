@@ -10,9 +10,8 @@ module Spree
 
       def create
         params.each do |name, value|
-          cc = Spree::CustomPreferencesConfiguration.new
-          next unless cc.has_preference? name
-          cc.set(:"#{name}", value)
+          next unless ::CUSTOM_PREFERENCE.has_preference? name
+          ::CUSTOM_PREFERENCE.set(:"#{name}", value)
         end
         flash[:success] = 'successfully_updated'
         redirect_to admin_custom_preferences_path
@@ -22,10 +21,3 @@ module Spree
     end
   end
 end
-
- #examples
- #cc = Spree::CustomPreferencesConfiguration.new
- #if cc.has_preference? :key
-   #cc.set(:key,'value')
-    #cc.get(:key:)
- #end
