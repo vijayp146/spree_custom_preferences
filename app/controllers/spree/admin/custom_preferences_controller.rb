@@ -4,7 +4,6 @@ module Spree
     class CustomPreferencesController <  Spree::Admin::BaseController
 
       def index
-        @custom_preference_obj = Spree::CustomPreferencesConfiguration.new
         @custom_preferences = [:signup_notification]
      end
 

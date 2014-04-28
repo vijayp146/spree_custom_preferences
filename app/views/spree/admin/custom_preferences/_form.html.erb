@@ -7,11 +7,11 @@
 
       <fieldset class="general no-border-top">
         <% @custom_preferences.each do |key|
-          type = @custom_preference_obj.preference_type(key) %>
+          type = ::CUSTOM_PREFERENCE.preference_type(key) %>
             <div class="field">
               <%= label_tag(key, t(key) + ': ') + tag(:br) if type != :boolean %>
               <%#= preference_field_tag(key, @custom_preference_obj.get(key), :type => type  ) %>
-              <%= text_area_tag key, @custom_preference_obj.get(key), :style => 'width: 600px; height: 100px;' %>
+              <%= text_area_tag key, ::CUSTOM_PREFERENCE.get(key), :style => 'width: 600px; height: 100px;' %>
 
             </div>
         <% end %>
