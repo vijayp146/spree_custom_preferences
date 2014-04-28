@@ -5,7 +5,7 @@ module Spree
 
       def index
         @custom_preference_obj = Spree::CustomPreferencesConfiguration.new
-        @custom_preferences = [:signup_notification, :signup1_notification]
+        @custom_preferences = [:signup_notification]
      end
 
 
