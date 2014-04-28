@@ -1,0 +1,18 @@
+
+<% content_for :page_title do %>
+    <%= t('spree.custom_preferences') %>
+<% end %>
+
+
+<div data-hook="admin_user_gifts_edit_form">
+  <div id="pop-up-manager-form-wrapper">
+
+    <%= form_tag spree.admin_custom_preferences_path do %>
+
+        <%= render 'form' %>
+
+    <% end %>
+
+  </div>
+</div>
+

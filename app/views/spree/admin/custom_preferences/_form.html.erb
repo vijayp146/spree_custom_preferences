@@ -1,0 +1,26 @@
+<fieldset data-hook="admin_pop_up_manager_form_fields">
+
+
+
+  <div class="clearfix">
+    <div class="left eight columns alpha" data-hook="admin_user_blocks_form_left">
+
+      <fieldset class="general no-border-top">
+        <% @custom_preferences.each do |key|
+          type = @custom_preference_obj.preference_type(key) %>
+            <div class="field">
+              <%= label_tag(key, t(key) + ': ') + tag(:br) if type != :boolean %>
+              <%#= preference_field_tag(key, @custom_preference_obj.get(key), :type => type  ) %>
+              <%= text_area_tag key, @custom_preference_obj.get(key), :style => 'width: 600px; height: 100px;' %>
+
+            </div>
+        <% end %>
+      </fieldset>
+
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+         <%= submit_tag 'update' %>
+     </div>
+    </div>
+   </div>
+</fieldset>
+
